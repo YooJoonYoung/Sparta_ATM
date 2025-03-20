@@ -1,27 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 
-public class UserData : MonoBehaviour
+[System.Serializable]
+public class UserData 
 {
-    public TextMeshProUGUI curBalance;
-    public TextMeshProUGUI curCash;
+    public string Name;
+    public int Cash;
+    public int Balance;
 
-    public int Balance = 500000;
-    public int Cash = 100000;
-    // Start is called before the first frame update
-    void Start()
+    public UserData(string name, int cash, int balance)
     {
-
-        UpdateUI();
-    }
-
-    void UpdateUI()
-    {
-        curBalance.text = string.Format("{0:N0}", Balance);
-        curCash.text = string.Format("{0:N0}",Cash);
-
+        Name = name;
+        Cash = cash;
+        Balance = balance;
     }
 }
