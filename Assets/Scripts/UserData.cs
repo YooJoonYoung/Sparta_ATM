@@ -31,8 +31,7 @@ public class UserData
         }
         else
         {
-            //입금할수 없는금액입니다 UI
-            Debug.Log("현금부족");
+            GameManager.Instance.popUpError.SetActive(true);           
         }
     }
     public void SubtractMoney(int amount)
@@ -46,8 +45,7 @@ public class UserData
         }
         else
         {
-            //잔액부족 UI
-            Debug.Log("잔액 부족");
+            GameManager.Instance.popUpError.SetActive(true);
         }
     }
 }

@@ -25,39 +25,7 @@ public class PopUpBank : MonoBehaviour
         WithdrawalButton.onClick.AddListener(OnWithdrawalButtonClicked);
         BackBtn1.onClick.AddListener(OnBackBtnClicked);
         BackBtn2.onClick.AddListener(OnBackBtnClicked);
-        UpdateUI();
-    }
-
-    void UpdateUI()
-    {
-        int balance = ParseTextToInt(curBalance.text);
-        int cash = ParseTextToInt(curCash.text);
-
-        curBalance.text = string.Format("{0:N0}", balance);
-          curCash.text = string.Format("{0:N0}", cash);
-    }
-    int ParseTextToInt(string text) //텍스트를 정수로 파싱
-    {
-        if (string.IsNullOrEmpty(text)) //텍스트 비었으면 0 반환
-        {
-            Debug.LogError("텍스트가 비었음");
-            return 0;
-        }
-
-        text = text.Trim(); //공백제거
-
-        string numericText = string.Concat(text.Where(c => char.IsDigit(c))); //문자있으면 숫자만 출력
-
-        if (int.TryParse(numericText, out int result))
-        {
-            return result;
-        }
-        else
-        {
-            Debug.LogError("안됨. 텍스트: " + text);
-            return 0;
-        }
-
+    
     }
     void OnDePositButtonClicked()
     {
@@ -80,4 +48,5 @@ public class PopUpBank : MonoBehaviour
         DepositButton.gameObject.SetActive(true);
         WithdrawalButton.gameObject.SetActive(true);
     }
+
 }
