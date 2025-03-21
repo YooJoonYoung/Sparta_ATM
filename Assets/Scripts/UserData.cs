@@ -18,4 +18,36 @@ public class UserData
         Cash = cash;
         Balance = balance;
     }
+   public void AddMoney(int amount)
+    {
+    
+
+        if (Cash >= amount)
+        {
+            Cash -= amount;
+            Balance += amount;
+
+
+        }
+        else
+        {
+            //입금할수 없는금액입니다 UI
+            Debug.Log("현금부족");
+        }
+    }
+    public void SubtractMoney(int amount)
+    {
+        
+
+        if (Balance >= amount)
+        {
+            Balance -= amount;
+            Cash += amount;
+        }
+        else
+        {
+            //잔액부족 UI
+            Debug.Log("잔액 부족");
+        }
+    }
 }

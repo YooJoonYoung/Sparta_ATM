@@ -51,4 +51,15 @@ public class GameManager : MonoBehaviour
         userdata.Balance = balance;
         Refresh();  // 데이터가 변경되었으면 UI 갱신
     }
+
+    public void Add(int amount)
+    {
+        userdata.AddMoney(amount);
+        Refresh();
+    }
+    public void Sub(int amount)
+    {
+        userdata.SubtractMoney(amount);
+        Refresh();
+    }
 }

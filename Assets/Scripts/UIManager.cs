@@ -9,13 +9,13 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {  
-        updateButton.onClick.AddListener(OnUpdateButtonClicked);// 버튼 클릭 이벤트 리스너 등록
+     //   updateButton.onClick.AddListener(OnUpdateButtonClicked);// 버튼 클릭 이벤트 리스너 등록
     }
 
     // 버튼 클릭 시 호출될 메서드
     void OnUpdateButtonClicked()
     {
         // UserData를 새로운 값으로 업데이트하고 UI 갱신
-        GameManager.Instance.UpdateUserData("새로운 이름", 200000, 100000);
+     //   GameManager.Instance.UpdateUserData("새로운 이름", 200000, 100000);
     }
 }
