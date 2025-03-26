@@ -7,11 +7,7 @@ public class DataManager : MonoBehaviour
 {
     public string filePath;
 
-    private void Start()
-    {
-        //filePath = Application.persistentDataPath + "/userdata.json"; // 사용자 데이터가 저장될 경로
-       // filePath = GameManager.Instance.saveFilePath;
-    }
+  
     private void Awake()
     {
         filePath = Application.persistentDataPath + "/userdata.json"; // 사용자 데이터가 저장될 경로

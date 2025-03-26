@@ -95,8 +95,7 @@ public class GameManager : MonoBehaviour
         rimittancebutton.onClick.AddListener(OnRimittanceButtonClicked);
         rimittanceExitButton.onClick.AddListener(OnRimittanceExitButtonClicked);
 
-        // 게임 시작 시 저장된 데이터 로드
-        //  LoadUserData();
+  
     }
     // 로그인 버튼 클릭 처리
     void OnLoginButtonClicked()
@@ -105,7 +104,7 @@ public class GameManager : MonoBehaviour
         string inputPassword = passwordInputField.text;
         UserData foundUser = registrationManager.FindUserByCredentials(inputId, inputPassword);//사용자 리스트에서 정보확인
 
-        //if (userdata.CheckCredentials(inputId, inputPassword))
+    
         if(foundUser !=null)
         {
             // 로그인 성공: PopupLogin 숨기고 PopupBank 표시
@@ -252,38 +251,16 @@ public class GameManager : MonoBehaviour
     {
         userdata.AddMoney(amount);
         Refresh();
-      //  SaveUserData(); // 입금후 자동저장
+     
     }
     public void Sub(int amount)
     {
         userdata.SubtractMoney(amount);
         Refresh();
-    //    SaveUserData();//출금후 자동저장
+    
     }
     
-    //public void SaveUserData()// JSON 파일에 데이터 저장
-    //{      
-    //    string json = JsonUtility.ToJson(userdata, true);// UserData를 JSON으로 직렬화
-
-    //    File.WriteAllText(saveFilePath, json); // JSON 파일로 저장
-    //    Debug.Log("유저데이터 저장됨");
-    //}
-
-    //public void LoadUserData()// JSON 파일에서 데이터 로드
-    //{
-    //    if (File.Exists(saveFilePath))
-    //    {  
-    //        string json = File.ReadAllText(saveFilePath); // JSON 파일 읽기
-    //        userdata = JsonUtility.FromJson<UserData>(json); // JSON을 UserData 객체로 변환        
-          
-    //        Debug.Log("유저데이터 읽음");
-    //    }
-    //    else
-    //    {          
-    //        userdata = new UserData("유준영", 100000, 50000, "defaultId", "defaultPassword"); // 파일이 없다면 기본 값으로 초기화
-    //        Debug.Log("기존 데이터 없어 기본값 설정");
-    //    }
-    //}
+  
     void OnErrorButtonClicked()
     {
         popUpError.SetActive(false);
